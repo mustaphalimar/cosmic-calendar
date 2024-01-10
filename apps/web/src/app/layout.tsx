@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import VideoBackground from "@/component/video-bg";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,10 +17,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.className} text-white w-full h-screen`}>
-        <div className="max-w-full max-h-[100vh] absolute -z-10  top-0 right-0 overflow-hidden">
-          <VideoBackground />
-        </div>
-        <div className="z-10">{children}</div>
+        {children}
       </body>
     </html>
   );

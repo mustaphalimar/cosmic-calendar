@@ -1,8 +1,14 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Fira_Code } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
+
+const fira = Fira_Code({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-fira",
+});
 
 export const metadata: Metadata = {
   title: "The Cosmic Calendar",
@@ -16,9 +22,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} text-white w-full h-screen`}>
-        {children}
-      </body>
+      <body className={`${fira.variable} font-fira`}>{children}</body>
     </html>
   );
 }

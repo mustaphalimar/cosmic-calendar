@@ -12,9 +12,10 @@ const IntroductionScreen: React.FC<IntroductionScreenProps> = () => {
   const introduction = useIntroduction();
 
   return (
-    <div className=" flex  p-4 text-center">
+    <div className=" flex  p-4 ">
       <Steps
         introduction={introduction}
+        zoomIn={zoomIn}
         steps={[
           <Greeting key={1} zoomIn={zoomIn} introduction={introduction} />,
         ]}

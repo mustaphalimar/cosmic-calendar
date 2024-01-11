@@ -18,7 +18,7 @@ const Greeting: React.FC<Props> = ({ introduction, zoomIn }) => {
   };
 
   return (
-    <section>
+    <section className="text-center">
       <motion.div
         initial={{ opacity: 1, y: 0 }}
         animate={{ opacity: 0, y: -5 }}
@@ -43,7 +43,7 @@ const Greeting: React.FC<Props> = ({ introduction, zoomIn }) => {
           initial={{ opacity: 0, y: 10, visibility: "hidden" }} // Start with 0% opacity and slightly lower position
           animate={{ opacity: 1, y: -10, visibility: "visible" }} // Animate to 100% opacity and move to original position
           transition={{ duration: 1.2, delay: 3.5, ease: "circInOut" }}
-          className="text-xl"
+          className="text-xl "
         >
           This is a web simulation of the Cosmic Calendar concept.
         </motion.p>

@@ -1,5 +1,7 @@
 "use client";
 
+import { motion } from "framer-motion";
+
 import { useState } from "react";
 const months = [
   {
@@ -83,7 +85,13 @@ const Explore = () => {
     <main className="w-full h-screen  text-gray-200 grid grid-cols-2 md:grid-cols-3  lg:grid-cols-4 lg:grid-rows-3">
       {months.map((month) => {
         return (
-          <div
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{
+              duration: 1,
+              delay: 0.1 * month.id,
+            }}
             onMouseOver={() => {
               setShowRange((prev) => {
                 return prev.map((_, index) =>
@@ -96,13 +104,13 @@ const Explore = () => {
           >
             <p className="text-3xl font-[100] m-2">{month.name}</p>
             <p
-              className={`text-sm transition duration-500 text-gray-400 ${
+              className={`text-sm transition duration-300 text-gray-400 ${
                 showRange[month.id] ? "opacity-100" : "opacity-0"
               }`}
             >
               From {month.range[0]} to {month.range[1]}
             </p>
-          </div>
+          </motion.div>
         );
       })}
     </main>

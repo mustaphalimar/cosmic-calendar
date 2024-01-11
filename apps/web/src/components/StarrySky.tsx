@@ -2,6 +2,7 @@
 
 import { useStarrySky } from "@/hooks/use-starry-sky";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const StarrySky = () => {
   const zoomIn = useStarrySky();
@@ -13,6 +14,21 @@ const StarrySky = () => {
       transition={{ ease: "backInOut", duration: 1.2 }}
       className={`sky `}
     >
+      <Image
+        src="/images/galaxy.png"
+        width={60}
+        height={60}
+        alt=""
+        className="galaxy opacity-50"
+      />
+      {/* <Image
+        src="/images/sun.png"
+        width={20}
+        height={20}
+        alt=""
+        className="sun"
+      /> */}
+      <div className="sun" />
       <span></span>
       <span></span>
       <span></span>

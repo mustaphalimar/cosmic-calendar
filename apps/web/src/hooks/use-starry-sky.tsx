@@ -1,6 +1,6 @@
 import { create } from "zustand";
 
-interface UseStarrySky {
+export interface UseStarrySky {
   zoomedIn: boolean;
   onZoomIn: () => void;
   onZoomOut: () => void;

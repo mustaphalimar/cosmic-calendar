@@ -1,10 +1,14 @@
 import type { Metadata } from "next";
-import { Inter, Fira_Code } from "next/font/google";
+import { Inter, Fira_Code, Roboto } from "next/font/google";
 import "./globals.css";
 import StarrySky from "@/components/StarrySky";
 import BackgroundAudio from "@/components/background-audio";
 
-const inter = Inter({ subsets: ["latin"] });
+const roboto = Roboto({
+  subsets: ["latin"],
+  weight: ["100", "300", "400", "500", "700", "900"],
+  variable: "--font-roboto",
+});
 
 const fira = Fira_Code({
   subsets: ["latin"],
@@ -24,7 +28,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`bg-black ${fira.variable} font-fira`}>
+      <body
+        className={`bg-black ${roboto.variable} ${fira.variable} font-fira`}
+      >
         <BackgroundAudio />
         <StarrySky />
 

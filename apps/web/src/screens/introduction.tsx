@@ -16,7 +16,9 @@ const IntroductionScreen: React.FC<IntroductionScreenProps> = () => {
     <div className=" flex  p-4 text-center">
       <Steps
         introduction={introduction}
-        steps={[<Greeting zoomIn={zoomIn} introduction={introduction} />]}
+        steps={[
+          <Greeting key={1} zoomIn={zoomIn} introduction={introduction} />,
+        ]}
       />
     </div>
   );

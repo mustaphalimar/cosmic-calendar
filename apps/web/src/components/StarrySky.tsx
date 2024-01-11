@@ -14,13 +14,13 @@ const StarrySky = () => {
       transition={{ ease: "backInOut", duration: 1.2 }}
       className={`sky `}
     >
-      <div className="galaxy">
+      <div className="galaxy ">
         <Image
           src="/images/galaxy.png"
           width={60}
           height={60}
           alt=""
-          className="opacity-50"
+          className="opacity-50 selection:bg-transparent"
         />
         {/* <div className="bg-gray-900 p-1 rounded">
           <p className="text-xs text-gray-300">That's the Andromeda galaxy.</p>

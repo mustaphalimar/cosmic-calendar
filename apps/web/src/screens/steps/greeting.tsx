@@ -45,7 +45,7 @@ const Greeting: React.FC<Props> = ({ introduction, zoomIn }) => {
           transition={{ duration: 1.2, delay: 3.5, ease: "circInOut" }}
           className="text-xl"
         >
-          This is a web simulation of the Cosmic Calendar approach.
+          This is a web simulation of the Cosmic Calendar concept.
         </motion.p>
       </motion.div>
 

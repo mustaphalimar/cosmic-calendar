@@ -4,7 +4,6 @@ import { useStarrySky } from "@/hooks/use-starry-sky";
 import Steps from "./steps/Steps";
 import Greeting from "./steps/greeting";
 import { useIntroduction } from "@/hooks/use-introduction";
-import { useEffect } from "react";
 
 interface IntroductionScreenProps {}
 

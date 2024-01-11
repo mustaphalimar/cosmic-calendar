@@ -92,6 +92,43 @@
   z-index: -1;
 }
 
+.galaxy {
+  position: absolute;
+  bottom: 20%;
+  left: 20%;
+}
+.sun {
+  width: 5px; /* Size of the sun */
+  height: 5px; /* Size of the sun */
+  border-radius: 50%; /* Makes the div circular */
+  background: radial-gradient(
+    circle,
+    #ffdd4b 40%,
+    #c8ff00 60%,
+    #ffe01a 80%,
+    #fbeb09 100%
+  );
+  box-shadow: 0 0 20px 5px #ffcc00; /* Glowing effect */
+  animation: pulse 6s infinite;
+  opacity: 0.8;
+  position: absolute;
+  top: 20%;
+  left: 50%;
+}
+
+/* Optional: Pulse animation for glowing effect */
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 6px 2px #ffcc00;
+  }
+  50% {
+    box-shadow: 0 0 10px 5px #ffcc00;
+  }
+  100% {
+    box-shadow: 0 0 6px 2px #ffcc00;
+  }
+}
+
 .sky span {
   width: 0.4vmin;
   height: 0.4vmin;

@@ -60,6 +60,7 @@ const config = {
       },
       fontFamily: {
         fira: "var(--font-fira)",
+        roboto: "var(--font-roboto)",
       },
       keyframes: {
         "accordion-down": {

@@ -1,31 +1,0 @@
-
-> web@0.1.0 build /Users/mustaphalimar/dev/PROJECTS/cosmic-calendar/apps/web
-> next build
-
-   ▲ Next.js 14.0.4
-
-   Creating an optimized production build ...
- ✓ Compiled successfully
-   Linting and checking validity of types ...
-   Collecting page data ...
-   Generating static pages (0/6) ...
-   Generating static pages (1/6) 
-   Generating static pages (2/6) 
-   Generating static pages (4/6) 
- ✓ Generating static pages (6/6) 
-   Finalizing page optimization ...
-   Collecting build traces ...
-
-Route (app)                              Size     First Load JS
-┌ ○ /                                    42.8 kB         125 kB
-├ ○ /_not-found                          869 B          82.7 kB
-└ ○ /explore                             1.09 kB        82.9 kB
-+ First Load JS shared by all            81.8 kB
-  ├ chunks/0d9284fb-3888ae52a3794134.js  53.3 kB
-  ├ chunks/275-21ca47917edcedfb.js       26.7 kB
-  ├ chunks/main-app-e6993b307c2d8ac0.js  219 B
-  └ chunks/webpack-08fed886ab825e87.js   1.65 kB
-
-
-○  (Static)  prerendered as static content
-

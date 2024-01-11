@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Inter, Fira_Code } from "next/font/google";
 import "./globals.css";
+import StarrySky from "@/components/StarrySky";
+import BackgroundAudio from "@/components/background-audio";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,7 +24,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${fira.variable} font-fira`}>{children}</body>
+      <body className={`bg-black ${fira.variable} font-fira`}>
+        <BackgroundAudio />
+        <StarrySky />
+
+        <div className="z-10">{children}</div>
+      </body>
     </html>
   );
 }

@@ -61,6 +61,8 @@ const config = {
       fontFamily: {
         fira: "var(--font-fira)",
         roboto: "var(--font-roboto)",
+        inter: "var(--font-inter)",
+        outfit: "var(--font-outfit)",
       },
       keyframes: {
         "accordion-down": {

@@ -101,7 +101,27 @@
   position: absolute;
   bottom: 20%;
   left: 20%;
+
+  animation: galaxyAnimation 10s infinite ease-in-out;
 }
+
+@keyframes galaxyAnimation {
+  0% {
+    transform: rotate3d(0, 0, 0, 0deg);
+    opacity: 0.8;
+  }
+
+  50% {
+    transform: rotate3d(5, 5, 5, 10deg);
+    opacity: 0.9;
+  }
+
+  100% {
+    transform: rotate3d(0, 0, 0, 0deg);
+    opacity: 1;
+  }
+}
+
 .sun {
   width: 5px; /* Size of the sun */
   height: 5px; /* Size of the sun */

@@ -3,22 +3,23 @@
 import { useStarrySky } from "@/hooks/use-starry-sky";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { useEffect, useState } from "react";
 
 const StarrySky = () => {
-  const zoomIn = useStarrySky();
+  const starrySky = useStarrySky();
 
   return (
     <motion.div
       initial={{ scale: 1, opacity: 1 }}
-      animate={zoomIn.zoomedIn && { scale: 1.3, opacity: 0 }} // Animate to 100% opacity and move to original position
+      animate={starrySky.zoomedIn && { scale: 1.3, opacity: 0 }} // Animate to 100% opacity and move to original position
       transition={{ ease: "backInOut", duration: 1.2 }}
       className={`sky `}
     >
       <div className="galaxy ">
         <Image
           src="/images/galaxy.png"
-          width={60}
-          height={60}
+          width={80}
+          height={80}
           alt=""
           className="opacity-50 selection:bg-transparent"
         />
@@ -35,12 +36,9 @@ const StarrySky = () => {
         className="sun"
       /> */}
       <div className="sun" />
-      {new Array(77)
-        .fill(1)
-        .map((i) => new Date().getDate() + Math.random())
-        .map((item) => {
-          return <span key={item}></span>;
-        })}
+      {new Array(38).fill(1).map((item, index) => {
+        return <span key={index}></span>;
+      })}
     </motion.div>
   );
 };

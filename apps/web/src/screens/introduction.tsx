@@ -9,17 +9,21 @@ import BriefOverview from "@/screens/steps/brief-overview";
 interface IntroductionScreenProps {}
 
 const IntroductionScreen: React.FC<IntroductionScreenProps> = () => {
-  const zoomIn = useStarrySky();
+  const starrySky = useStarrySky();
   const introduction = useIntroduction();
 
   return (
     <div className="">
       <Steps
         introduction={introduction}
-        zoomIn={zoomIn}
+        zoomIn={starrySky}
         steps={[
-          <Greeting key={1} zoomIn={zoomIn} introduction={introduction} />,
-          <BriefOverview key={2} introduction={introduction} />,
+          <Greeting key={1} zoomIn={starrySky} introduction={introduction} />,
+          <BriefOverview
+            key={2}
+            introduction={introduction}
+            starrySky={starrySky}
+          />,
         ]}
       />
     </div>

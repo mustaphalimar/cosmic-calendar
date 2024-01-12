@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { UseIntroduction } from "@/hooks/use-introduction";
 import Image from "next/image";
+import { months } from "@/data/calendar";
 
 interface Props {
   introduction: UseIntroduction;
@@ -83,13 +84,29 @@ const BriefOverview: React.FC<Props> = ({ introduction }) => {
             }
             transition={{ duration: 0.5, delay: 2.2, ease: "backOut" }}
           >
-            <Image
-              src="/images/cosmic-calendar-2.png"
-              width={1000}
-              height={200}
-              alt="cosmic-calendar"
-              className="w-full"
-            />
+            <main className="w-full border  text-gray-200 grid grid-cols-4">
+              {months.map((month) => {
+                return (
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{
+                      duration: 1,
+                      delay: 0.1 * month.id,
+                    }}
+                    key={month.id}
+                    className="  lg:h-[140px] w-full border transition duration-500 p-1 lg:p-2"
+                  >
+                    <p className="  lg:text-3xl font-[100] ">{month.name}</p>
+                    <p
+                      className={` text-xs lg:text-sm transition duration-300 text-gray-400`}
+                    >
+                      From {month.range[0]} to {month.range[1]}
+                    </p>
+                  </motion.div>
+                );
+              })}
+            </main>
           </motion.div>
         </motion.div>
       </div>

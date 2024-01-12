@@ -39,7 +39,6 @@ const StarrySky = () => {
         .fill(1)
         .map((i) => new Date().getDate() + Math.random())
         .map((item) => {
-          console.log(item);
           return <span key={item}></span>;
         })}
     </motion.div>

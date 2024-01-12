@@ -1,13 +1,19 @@
+"use client";
+
 import { motion } from "framer-motion";
 import { UseIntroduction } from "@/hooks/use-introduction";
 import Image from "next/image";
 import { months } from "@/data/calendar";
+import { useEffect } from "react";
+import { UseStarrySky } from "@/hooks/use-starry-sky";
+import StarrySky from "@/components/StarrySky";
 
 interface Props {
   introduction: UseIntroduction;
+  starrySky: UseStarrySky;
 }
 
-const BriefOverview: React.FC<Props> = ({ introduction }) => {
+const BriefOverview: React.FC<Props> = ({ introduction, starrySky }) => {
   return (
     <section className="md:w-[75%] lg:w-[60%] m-auto p-2">
       <div className="py-10">

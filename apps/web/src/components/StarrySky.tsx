@@ -3,14 +3,15 @@
 import { useStarrySky } from "@/hooks/use-starry-sky";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { useEffect, useState } from "react";
 
 const StarrySky = () => {
-  const zoomIn = useStarrySky();
+  const starrySky = useStarrySky();
 
   return (
     <motion.div
       initial={{ scale: 1, opacity: 1 }}
-      animate={zoomIn.zoomedIn && { scale: 1.3, opacity: 0 }} // Animate to 100% opacity and move to original position
+      animate={starrySky.zoomedIn && { scale: 1.3, opacity: 0 }} // Animate to 100% opacity and move to original position
       transition={{ ease: "backInOut", duration: 1.2 }}
       className={`sky `}
     >

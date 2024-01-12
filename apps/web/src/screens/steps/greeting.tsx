@@ -18,17 +18,17 @@ const Greeting: React.FC<Props> = ({ introduction, zoomIn }) => {
   };
 
   return (
-    <section className="text-center">
+    <section className=" p-2 text-center w-full h-screen flex flex-col justify-center items-center">
       <motion.div
         initial={{ opacity: 1, y: 0 }}
         animate={{ opacity: 0, y: -5 }}
         transition={{ duration: 1, delay: 3, ease: "backOut" }}
       >
         <motion.p
-          initial={{ opacity: 0, y: 20 }} // Start with 0% opacity and slightly lower position
-          animate={{ opacity: 1, y: 0 }} // Animate to 100% opacity and move to original position
+          initial={{ opacity: 0, y: 20, visibility: "hidden" }} // Start with 0% opacity and slightly lower position
+          animate={{ opacity: 1, y: 10, visibility: "visible" }} // Animate to 100% opacity and move to original position
           transition={{ duration: 1.2, ease: "circInOut" }}
-          className="text-4xl"
+          className=" text-2xl lg:text-4xl uppercase"
         >
           Welcome
         </motion.p>
@@ -43,9 +43,9 @@ const Greeting: React.FC<Props> = ({ introduction, zoomIn }) => {
           initial={{ opacity: 0, y: 10, visibility: "hidden" }} // Start with 0% opacity and slightly lower position
           animate={{ opacity: 1, y: -10, visibility: "visible" }} // Animate to 100% opacity and move to original position
           transition={{ duration: 1.2, delay: 3.5, ease: "circInOut" }}
-          className="text-xl "
+          className=" text-xl lg:text-3xl uppercase"
         >
-          This is a web simulation of the Cosmic Calendar concept.
+          This is a web demonstration of the Cosmic Calendar concept
         </motion.p>
       </motion.div>
 

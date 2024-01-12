@@ -1,8 +1,25 @@
 import type { Metadata } from "next";
-import { Inter, Fira_Code, Roboto } from "next/font/google";
+import { Inter, Fira_Code, Roboto, Outfit } from "next/font/google";
+import localFont from "next/font/local";
+
 import "./globals.css";
 import StarrySky from "@/components/StarrySky";
 import BackgroundAudio from "@/components/background-audio";
+
+const ddin = localFont({
+  src: [
+    {
+      path: "../fonts/D-DIN.woff2",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../fonts/D-DIN-Bold.woff2",
+      weight: "600",
+      style: "normal",
+    },
+  ],
+});
 
 const roboto = Roboto({
   subsets: ["latin"],
@@ -14,6 +31,18 @@ const fira = Fira_Code({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
   variable: "--font-fira",
+});
+
+const inter = Inter({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-inter",
+});
+
+const outfit = Outfit({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-outfit",
 });
 
 export const metadata: Metadata = {
@@ -29,7 +58,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`bg-black ${roboto.variable} ${fira.variable} font-fira`}
+        className={`bg-black   ${roboto.variable} ${fira.variable} ${inter.variable} ${outfit.variable} font-outfit font-bold`}
       >
         <BackgroundAudio />
         <StarrySky />

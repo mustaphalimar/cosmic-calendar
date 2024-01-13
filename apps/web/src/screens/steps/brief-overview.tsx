@@ -90,6 +90,14 @@ const BriefOverview: React.FC<Props> = ({ introduction, starrySky }) => {
             }
             transition={{ duration: 0.5, delay: 2.2, ease: "backOut" }}
           >
+            {/* <Image
+              src="/images/cosmiccalendar-2.jpg"
+              width={300}
+              height={300}
+              alt=""
+              className="w-full"
+            /> */}
+
             <main className="w-full border  text-gray-200 grid grid-cols-3 lg:grid-cols-4">
               {months.map((month) => {
                 return (

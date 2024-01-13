@@ -7,7 +7,7 @@ interface UseAudio {
 }
 
 export const useAudio = create<UseAudio>((set) => ({
-  playing: true,
+  playing: false,
   onPlay: () => set({ playing: true }),
   onStop: () => set({ playing: false }),
 }));

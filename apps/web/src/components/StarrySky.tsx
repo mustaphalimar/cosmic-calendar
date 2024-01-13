@@ -1,5 +1,6 @@
 "use client";
 
+import SpaceCanvas from "@/components/space-background";
 import { useStarrySky } from "@/hooks/use-starry-sky";
 import { motion } from "framer-motion";
 import Image from "next/image";
@@ -15,6 +16,7 @@ const StarrySky = () => {
       transition={{ ease: "backInOut", duration: 1.2 }}
       className={`sky `}
     >
+      {!starrySky.zoomedIn && <SpaceCanvas />}
       <div className="galaxy ">
         <Image
           src="/images/galaxy.png"

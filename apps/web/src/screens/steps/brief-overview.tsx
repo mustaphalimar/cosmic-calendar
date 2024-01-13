@@ -7,6 +7,7 @@ import { months } from "@/data/calendar";
 import { useEffect } from "react";
 import { UseStarrySky } from "@/hooks/use-starry-sky";
 import StarrySky from "@/components/StarrySky";
+import SpaceCanvas from "@/components/space-background";
 
 interface Props {
   introduction: UseIntroduction;
@@ -16,6 +17,7 @@ interface Props {
 const BriefOverview: React.FC<Props> = ({ introduction, starrySky }) => {
   return (
     <section className="md:w-[75%] lg:w-[60%] m-auto p-2">
+      <SpaceCanvas />
       <div className="py-10">
         <motion.div
           initial={{ opacity: 0, y: 0, visibility: "hidden" }}
@@ -90,6 +92,14 @@ const BriefOverview: React.FC<Props> = ({ introduction, starrySky }) => {
             }
             transition={{ duration: 0.5, delay: 2.2, ease: "backOut" }}
           >
+            {/* <Image
+              src="/images/cosmiccalendar-2.jpg"
+              width={300}
+              height={300}
+              alt=""
+              className="w-full"
+            /> */}
+
             <main className="w-full border  text-gray-200 grid grid-cols-3 lg:grid-cols-4">
               {months.map((month) => {
                 return (

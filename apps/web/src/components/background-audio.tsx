@@ -14,7 +14,7 @@ const BackgroundAudio = () => {
     }
   }, [volume, audio.playing]);
   return (
-    <audio autoPlay loop ref={audioRef}>
+    <audio loop ref={audioRef}>
       <source src="/audio/background.mp3" type="audio/mp3" />
     </audio>
   );

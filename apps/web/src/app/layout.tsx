@@ -5,6 +5,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import StarrySky from "@/components/StarrySky";
 import BackgroundAudio from "@/components/background-audio";
+import SpaceCanvas from "@/components/space-background";
 
 const ddin = localFont({
   src: [

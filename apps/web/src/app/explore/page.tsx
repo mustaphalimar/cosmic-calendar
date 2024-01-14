@@ -42,11 +42,11 @@ const Explore = () => {
             key={month.id}
             className=" cursor-pointer w-full border transition duration-500 hover:bg-gray-950 p-2"
           >
-            <p className=" text-3xl lg:text-4xl font-[100] m-2">{month.name}</p>
+            <p className=" text-2xl lg:text-4xl font-[100] m-2">{month.name}</p>
             <p
-              className={`text-sm transition duration-300 text-gray-400 ${
+              className={`text-base transition duration-300 text-gray-400 ${
                 showRange[month.id] ? "opacity-100" : "opacity-0"
-              }`}
+              } font-thin `}
             >
               From {month.range[0]} to {month.range[1]}
             </p>

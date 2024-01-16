@@ -124,7 +124,7 @@ const BriefOverview: React.FC<Props> = ({ introduction, starrySky }) => {
   }, [isTimeMeasurementInView]);
 
   return (
-    <section className="md:w-[75%] lg:w-[60%] m-auto p-2">
+    <section className="md:w-[75%] lg:w-[60%] m-auto ">
       <SpaceCanvas />
       <div className="py-10">
         <motion.div
@@ -238,7 +238,7 @@ const BriefOverview: React.FC<Props> = ({ introduction, starrySky }) => {
               <motion.div
                 variants={{
                   hidden: { width: 0 },
-                  visible: { width: "90%" },
+                  visible: { width: "100%" },
                 }}
                 initial="hidden"
                 animate={calendarControls}
@@ -247,7 +247,7 @@ const BriefOverview: React.FC<Props> = ({ introduction, starrySky }) => {
                   delay: 1,
                   ease: "backInOut",
                 }}
-                className="m-auto h-[0.5px] bg-white"
+                className="h-[0.5px] bg-white"
               />
 
               <motion.p
@@ -274,7 +274,7 @@ const BriefOverview: React.FC<Props> = ({ introduction, starrySky }) => {
                 initial="hidden"
                 animate={timeMeasurementControls}
                 transition={{
-                  delay: 2,
+                  delay: 1,
                 }}
                 className="mt-2 md:text-lg"
               >
@@ -295,7 +295,7 @@ const BriefOverview: React.FC<Props> = ({ introduction, starrySky }) => {
             <motion.div
               variants={{
                 hidden: { width: 0 },
-                visible: { width: "90%" },
+                visible: { width: "100%" },
               }}
               initial="hidden"
               animate={timeMeasurementControls}
@@ -364,12 +364,12 @@ const TimeMeasurement = ({ item }: { item: any }) => {
       key={item.id}
       className="flex gap-2 items-start text-lg"
     >
-      <div className="flex flex-col md:flex-row gap-1">
+      <div className="flex flex-col md:flex-row gap-1 px-2 ">
         <div className="flex items-center gap-2">
           <div className="w-2 h-2 rounded-full bg-white" />
-          <p>{item.text}</p>
+          <p className="text-sm md:text-base">{item.text}</p>
         </div>
-        <p className="underline">{item.time}</p>
+        <p className="underline text-sm md:text-base">{item.time}</p>
       </div>
     </motion.li>
   );
@@ -400,13 +400,13 @@ const Item = ({ item }: { item: any }) => {
         delay: 0.2 * item.id,
       }}
       key={item.id}
-      className="flex gap-2 items-start text-lg"
+      className="flex gap-2 items-center text-lg"
     >
-      <div className="flex items-center gap-2">
+      <div className="flex items-center gap-2 px-2">
         <div className="w-2 h-2 rounded-full bg-white" />
-        <p className="min-w-[140px] text-lg">{item.time}</p>:
+        <p className="min-w-[140px] text-sm lg:text-base">{item.time}</p>:
       </div>
-      <p>{item.text}</p>
+      <p className="text-sm">{item.text}</p>
     </motion.li>
   );
 };

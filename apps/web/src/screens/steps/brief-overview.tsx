@@ -369,7 +369,7 @@ const TimeMeasurement = ({ item }: { item: any }) => {
           <div className="w-2 h-2 rounded-full bg-white" />
           <p className="text-sm md:text-base">{item.text}</p>
         </div>
-        <p className="underline text-sm md:text-base">{item.time}</p>
+        <p className="underline text-sm md:text-base font-bold">{item.time}</p>
       </div>
     </motion.li>
   );
@@ -400,13 +400,16 @@ const Item = ({ item }: { item: any }) => {
         delay: 0.2 * item.id,
       }}
       key={item.id}
-      className="flex gap-2 items-center text-lg"
+      className="flex flex-col md:flex-row gap-1 md:items-center  text-lg"
     >
       <div className="flex items-center gap-2 px-2">
         <div className="w-2 h-2 rounded-full bg-white" />
-        <p className="min-w-[140px] text-sm lg:text-base">{item.time}</p>:
+        <p className="md:min-w-[140px] text-sm lg:text-base font-bold">
+          {item.time}
+        </p>
+        <span>:</span>
       </div>
-      <p className="text-sm">{item.text}</p>
+      <p className="text-sm px-10">{item.text}</p>
     </motion.li>
   );
 };

@@ -21,12 +21,12 @@ const Greeting: React.FC<Props> = ({ introduction, zoomIn }) => {
     <section className=" p-2 text-center w-full h-screen flex flex-col justify-center items-center">
       <motion.div
         initial={{ opacity: 1, y: 0 }}
-        animate={{ opacity: 0, y: -5 }}
+        animate={{ opacity: 0, y: -5, visibility: "hidden" }}
         transition={{ duration: 1, delay: 3, ease: "backOut" }}
       >
         <motion.p
-          initial={{ opacity: 0, y: 20, visibility: "hidden" }} // Start with 0% opacity and slightly lower position
-          animate={{ opacity: 1, y: 10, visibility: "visible" }} // Animate to 100% opacity and move to original position
+          initial={{ opacity: 0, y: 20 }} // Start with 0% opacity and slightly lower position
+          animate={{ opacity: 1, y: 10 }} // Animate to 100% opacity and move to original position
           transition={{ duration: 1.2, ease: "circInOut" }}
           className=" text-2xl lg:text-4xl uppercase"
         >

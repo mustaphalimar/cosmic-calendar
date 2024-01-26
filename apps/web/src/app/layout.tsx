@@ -5,7 +5,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import StarrySky from "@/components/StarrySky";
 import BackgroundAudio from "@/components/background-audio";
-import SpaceCanvas from "@/components/space-background";
+import { Analytics } from "@vercel/analytics/react";
 
 const ddin = localFont({
   src: [
@@ -64,7 +64,10 @@ export default function RootLayout({
         <BackgroundAudio />
         <StarrySky />
 
-        <div className="z-10">{children}</div>
+        <div className="z-10">
+          {children}
+          <Analytics />
+        </div>
       </body>
     </html>
   );

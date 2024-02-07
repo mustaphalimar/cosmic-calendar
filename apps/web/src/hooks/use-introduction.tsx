@@ -8,7 +8,7 @@ export interface UseIntroduction {
 }
 
 export const useIntroduction = create<UseIntroduction>((set) => ({
-  currentStep: 1,
+  currentStep: 0,
   maxSteps: 4,
   onContinue: () =>
     set((state) => ({

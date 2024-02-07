@@ -149,7 +149,7 @@ const BriefOverview: React.FC<Props> = ({ introduction, starrySky }) => {
             }
             transition={{ duration: 0.5, delay: 0.8, ease: "backOut" }}
           >
-            <p className="text-2xl lg:text-3xl mt-4 lg:mt-0  font-bold ">
+            <p className="text-3xl  mt-4 lg:mt-0  font-bold ">
               A Brief Overview of <br className="md:hidden" />
               The Cosmic Calendar :
             </p>
@@ -169,17 +169,17 @@ const BriefOverview: React.FC<Props> = ({ introduction, starrySky }) => {
             }
             transition={{ duration: 0.5, delay: 1.5, ease: "backOut" }}
           >
-            <div className=" flex flex-col w-full md:w-[600px] items-center gap-2">
+            <div className=" flex flex-col w-full md:w-[800px] items-center gap-2">
               <Image
                 src="/images/carl-sagan.png"
                 width={200}
                 height={200}
                 alt="car-sagan"
-                className="w-full md:w-[600px]  object-contain"
+                className="w-full md:w-[800px]  object-contain"
               />
               <p className="text-sm">Carl Sagan. (1934 - 1996)</p>
             </div>
-            <p className="lg:text-xl">
+            <p className="lg:text-lg">
               The Cosmic Calendar is a method to visualize the history of the
               universe by scaling its 13.8 billion year lifespan down to a
               single year. In this calendar, each month represents a little more
@@ -208,7 +208,7 @@ const BriefOverview: React.FC<Props> = ({ introduction, starrySky }) => {
               className="w-full"
             /> */}
 
-            <main
+            {/* <main
               className="w-full border  text-gray-200 grid grid-cols-3 lg:grid-cols-4"
               ref={calendarRef}
             >
@@ -232,7 +232,7 @@ const BriefOverview: React.FC<Props> = ({ introduction, starrySky }) => {
                   </motion.div>
                 );
               })}
-            </main>
+            </main> */}
 
             <div>
               <motion.div

@@ -6,6 +6,7 @@ import "./globals.css";
 import StarrySky from "@/components/StarrySky";
 import BackgroundAudio from "@/components/background-audio";
 import { Analytics } from "@vercel/analytics/react";
+import Providers from "@/providers";
 
 const ddin = localFont({
   src: [
@@ -65,7 +66,7 @@ export default function RootLayout({
         <StarrySky />
 
         <div className="z-10">
-          {children}
+          <Providers>{children}</Providers>
           <Analytics />
         </div>
       </body>

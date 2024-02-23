@@ -8,6 +8,8 @@ import { useEffect, useRef } from "react";
 import { UseStarrySky } from "@/hooks/use-starry-sky";
 import StarrySky from "@/components/StarrySky";
 import SpaceCanvas from "@/components/space-background";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 const infos = [
   {
@@ -92,18 +94,27 @@ interface Props {
 
 const BriefOverview: React.FC<Props> = ({ introduction, starrySky }) => {
   const calendarRef = useRef(null);
-  const isInView = useInView(calendarRef, { once: true });
-  const calendarControls = useAnimation();
-
+  const buttonRef = useRef(null);
   const soWhatHappendRef = useRef(null);
-  const isWhatHappendInView = useInView(soWhatHappendRef, { once: true });
-  const whatHappendControls = useAnimation();
-
   const soTimeMeasurementRef = useRef(null);
+
+  const isInView = useInView(calendarRef, { once: true });
+  const isWhatHappendInView = useInView(soWhatHappendRef, { once: true });
   const isTimeMeasurementInView = useInView(soTimeMeasurementRef, {
     once: true,
   });
+  const isButtonInView = useInView(buttonRef, { once: true });
+
+  const calendarControls = useAnimation();
+  const whatHappendControls = useAnimation();
   const timeMeasurementControls = useAnimation();
+  const buttonControls = useAnimation();
+
+  useEffect(() => {
+    if (isButtonInView) {
+      buttonControls.start("visible");
+    }
+  }, [isButtonInView]);
 
   useEffect(() => {
     if (isInView) {
@@ -293,15 +304,10 @@ const BriefOverview: React.FC<Props> = ({ introduction, starrySky }) => {
             </div>
 
             <motion.div
-              variants={{
-                hidden: { width: 0 },
-                visible: { width: "100%" },
-              }}
-              initial="hidden"
-              animate={timeMeasurementControls}
+              initial={{ width: 0 }}
+              animate={{ width: "100%" }}
               transition={{
                 duration: 1,
-                delay: 2,
                 ease: "backInOut",
               }}
               className="w-[90%] m-auto h-[0.5px] bg-white"
@@ -331,6 +337,30 @@ const BriefOverview: React.FC<Props> = ({ introduction, starrySky }) => {
               </div>
             </div>
           </motion.div>
+        </motion.div>
+        <motion.div
+          ref={buttonRef}
+          variants={{
+            hidden: { opacity: 0 },
+            visible: { opacity: 1 },
+          }}
+          initial="hidden"
+          animate={buttonControls}
+          transition={{
+            duration: 1,
+            delay: 1,
+          }}
+          className="mt-10 flex justify-center"
+        >
+          <Button
+            variant="outline"
+            className="text-black"
+            // onClick={handleContinue}
+          >
+            <Link className="" href="/explore">
+              Start Exploring {`>`}
+            </Link>
+          </Button>
         </motion.div>
       </div>
     </section>

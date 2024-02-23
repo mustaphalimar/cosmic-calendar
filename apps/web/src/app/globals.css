@@ -2,6 +2,30 @@
 @tailwind components;
 @tailwind utilities;
 
+/* For WebKit (Chrome, Safari, newer versions of Edge) */
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: transparent;
+  border-radius: 10px;
+  border: 3px solid #2e2e2e;
+}
+
+/* For Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #555 #2e2e2e;
+}
+
+/* For IE and older browsers, there's no support for custom scrollbars */
+
 @layer base {
   :root {
     --background: 0 0% 100%;

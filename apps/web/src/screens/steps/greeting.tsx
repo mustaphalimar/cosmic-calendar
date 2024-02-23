@@ -13,8 +13,8 @@ interface Props {
 
 const Greeting: React.FC<Props> = ({ introduction, zoomIn }) => {
   const handleContinue = () => {
-    // introduction.onContinue();
-    // zoomIn.onZoomIn();
+    introduction.onContinue();
+    zoomIn.onZoomIn();
   };
 
   return (
@@ -60,7 +60,7 @@ const Greeting: React.FC<Props> = ({ introduction, zoomIn }) => {
             className="text-black"
             onClick={handleContinue}
           >
-            Coming Soon!
+            Continue
           </Button>
         </motion.div>
       </div>

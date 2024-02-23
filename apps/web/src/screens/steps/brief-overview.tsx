@@ -304,15 +304,10 @@ const BriefOverview: React.FC<Props> = ({ introduction, starrySky }) => {
             </div>
 
             <motion.div
-              variants={{
-                hidden: { width: 0 },
-                visible: { width: "100%" },
-              }}
-              initial="hidden"
-              animate={timeMeasurementControls}
+              initial={{ width: 0 }}
+              animate={{ width: "100%" }}
               transition={{
                 duration: 1,
-                delay: 2,
                 ease: "backInOut",
               }}
               className="w-[90%] m-auto h-[0.5px] bg-white"

@@ -67,7 +67,7 @@ export default function RootLayout({
 
         <div className="z-10">
           <Providers>{children}</Providers>
-          <Analytics />
+          <Analytics debug={false} />
         </div>
       </body>
     </html>

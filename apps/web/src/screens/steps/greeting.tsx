@@ -54,6 +54,7 @@ const Greeting: React.FC<Props> = ({ introduction, zoomIn }) => {
           initial={{ opacity: 0, y: 6, visibility: "hidden" }}
           animate={{ opacity: 1, y: -6, visibility: "visible" }} // Animate to 100% opacity and move to original position
           transition={{ duration: 0.8, delay: 7.2, ease: "backOut" }}
+          className="flex items-center gap-2"
         >
           <Button
             variant="outline"
@@ -62,6 +63,9 @@ const Greeting: React.FC<Props> = ({ introduction, zoomIn }) => {
           >
             Continue
           </Button>
+          {/* <Button variant="default" className="" onClick={handleContinue}>
+            About
+          </Button> */}
         </motion.div>
       </div>
     </section>

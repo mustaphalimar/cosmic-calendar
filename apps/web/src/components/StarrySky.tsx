@@ -14,7 +14,7 @@ const StarrySky = () => {
       initial={{ scale: 1, opacity: 1 }}
       animate={starrySky.zoomedIn && { scale: 1.3, opacity: 0 }} // Animate to 100% opacity and move to original position
       transition={{ ease: "backInOut", duration: 1.2 }}
-      className={`sky `}
+      className="sky"
     >
       {!starrySky.zoomedIn && <SpaceCanvas />}
       <div className="galaxy ">

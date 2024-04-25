@@ -7,6 +7,7 @@ import StarrySky from "@/components/StarrySky";
 import BackgroundAudio from "@/components/background-audio";
 import { Analytics } from "@vercel/analytics/react";
 import Providers from "@/providers";
+import { cn } from "@/lib/utils";
 
 const ddin = localFont({
   src: [
@@ -60,7 +61,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`bg-black   ${roboto.variable} ${fira.variable} ${inter.variable} ${outfit.variable} font-outfit font-bold`}
+        className={cn(
+          "bg-black , font-outfit font-bold",
+          roboto.variable,
+          fira.variable,
+          inter.variable,
+          outfit.variable
+        )}
       >
         <BackgroundAudio />
         <StarrySky />

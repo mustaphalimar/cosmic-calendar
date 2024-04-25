@@ -358,7 +358,7 @@ const BriefOverview: React.FC<Props> = ({ introduction, starrySky }) => {
             // onClick={handleContinue}
           >
             <Link className="" href="/explore">
-              Start Exploring {`>`}
+              Start Exploring &rarr;
             </Link>
           </Button>
         </motion.div>

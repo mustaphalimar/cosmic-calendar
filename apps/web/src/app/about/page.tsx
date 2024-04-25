@@ -10,9 +10,9 @@ const page = () => {
           The Cosmic Calendar
         </h1>
         <p className="font-thin md:w-[500px] mt-5">
-          This website is a simulation of the cosmic calendar concept, work is
-          still in progress, and is not yet open-source. If you intend to
-          contribute to this project, please contact the developer.
+          This website simulates the cosmic calendar concept. Work is still in
+          progress, and it is not yet open-source. If you are interested in
+          contributing to this project, please contact the developer.
         </p>
         <div className="mt-5 flex flex-col gap-2">
           <p className="text-xl">{`Developer's contact`}:</p>

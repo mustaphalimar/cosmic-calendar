@@ -4,7 +4,6 @@ import SpaceCanvas from "@/components/space-background";
 import { useStarrySky } from "@/hooks/use-starry-sky";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { useEffect, useState } from "react";
 
 const StarrySky = () => {
   const starrySky = useStarrySky();

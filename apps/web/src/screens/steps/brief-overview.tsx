@@ -1,15 +1,13 @@
 "use client";
 
-import { motion, useInView, useAnimation } from "framer-motion";
-import { UseIntroduction } from "@/hooks/use-introduction";
-import Image from "next/image";
-import { months } from "@/data/calendar";
-import { useEffect, useRef } from "react";
-import { UseStarrySky } from "@/hooks/use-starry-sky";
-import StarrySky from "@/components/StarrySky";
 import SpaceCanvas from "@/components/space-background";
-import { Button } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
+import { UseIntroduction } from "@/hooks/use-introduction";
+import { UseStarrySky } from "@/hooks/use-starry-sky";
+import { motion, useAnimation, useInView } from "framer-motion";
+import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useRef } from "react";
 
 const infos = [
   {
@@ -160,16 +158,15 @@ const BriefOverview: React.FC<Props> = ({ introduction, starrySky }) => {
             }
             transition={{ duration: 0.5, delay: 0.8, ease: "backOut" }}
           >
-            <p className="text-3xl  mt-4 lg:mt-0  font-bold ">
-              A Brief Overview of <br className="md:hidden" />
-              The Cosmic Calendar :
+            <p className="text-3xl mt-4 lg:mt-0  font-bold ">
+              A Brief Overview of The Cosmic Calendar
             </p>
           </motion.div>
         </motion.div>
 
         <motion.div>
           <motion.div
-            className="font-normal mt-4  flex flex-col-reverse md:flex-row items-center gap-4"
+            className="font-normal border p-2 mt-4  flex flex-col-reverse md:flex-row items-center  gap-4"
             initial={{ opacity: 0, y: 0, visibility: "hidden" }}
             animate={
               introduction.currentStep === 1 && {
@@ -180,7 +177,7 @@ const BriefOverview: React.FC<Props> = ({ introduction, starrySky }) => {
             }
             transition={{ duration: 0.5, delay: 1.5, ease: "backOut" }}
           >
-            <div className=" flex flex-col w-full md:w-[800px] items-center gap-2">
+            <div className=" flex flex-col mt-4 w-full md:w-[800px] items-center gap-2 ">
               <Image
                 src="/images/carl-sagan.png"
                 width={200}
@@ -193,14 +190,16 @@ const BriefOverview: React.FC<Props> = ({ introduction, starrySky }) => {
             <p className="lg:text-lg">
               The Cosmic Calendar is a method to visualize the history of the
               universe by scaling its 13.8 billion year lifespan down to a
-              single year. In this calendar, each month represents a little more
-              than a billion years. This concept was popularized by astronomer
-              Carl Sagan in his book and television series Cosmos.
+              single year. This visualization helps illustrate the vast
+              timescales of cosmic events, making it easier to understand the
+              sequence and duration of key milestones in the {`universe's `}
+              development. This concept was popularized by astronomer Carl Sagan
+              in his book and television series Cosmos.
             </p>
           </motion.div>
 
           <motion.div
-            className="font-normal mt-10 space-y-10"
+            className="font-normal border py-3 p-1 md:p-2 mt-10 space-y-10"
             initial={{ opacity: 0, y: 0, visibility: "hidden" }}
             animate={
               introduction.currentStep === 1 && {
@@ -272,9 +271,9 @@ const BriefOverview: React.FC<Props> = ({ introduction, starrySky }) => {
                 transition={{
                   duration: 1,
                 }}
-                className="my-10 text-2xl text-gray-100"
+                className="my-6 text-2xl text-gray-100"
               >
-                {`First, let's see what time looks in the cosmic calendar : `}
+                How time is represented in the Cosmic Calendar:
               </motion.p>
 
               <motion.p
@@ -326,12 +325,12 @@ const BriefOverview: React.FC<Props> = ({ introduction, starrySky }) => {
                 }}
                 className="text-2xl text-gray-100"
               >
-                So, what really happened in the universe on that scale?
+                What really happened in the universe at this scale?
               </motion.p>
               <div className="mt-8">
                 <ul className=" flex flex-col gap-6">
                   {infos.map((item) => (
-                    <Item key={item.id} item={item} />
+                    <Event key={item.id} item={item} />
                   ))}
                 </ul>
               </div>
@@ -352,15 +351,23 @@ const BriefOverview: React.FC<Props> = ({ introduction, starrySky }) => {
           }}
           className="mt-10 flex justify-center"
         >
-          <Button
+          <Link
+            className={buttonVariants({
+              variant: "outline",
+              className: "text-black",
+            })}
+            href="/explore"
+            // onClick={handleContinue}
+          >
+            Start Exploring &rarr;
+          </Link>
+          {/* <Button
             variant="outline"
             className="text-black"
             // onClick={handleContinue}
           >
-            <Link className="" href="/explore">
-              Start Exploring &rarr;
-            </Link>
-          </Button>
+
+          </Button> */}
         </motion.div>
       </div>
     </section>
@@ -405,7 +412,7 @@ const TimeMeasurement = ({ item }: { item: any }) => {
   );
 };
 
-const Item = ({ item }: { item: any }) => {
+const Event = ({ item }: { item: any }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: false });
   const mainControls = useAnimation();
@@ -430,16 +437,18 @@ const Item = ({ item }: { item: any }) => {
         delay: 0.2 * item.id,
       }}
       key={item.id}
-      className="flex flex-col md:flex-row gap-1 md:items-center  text-lg"
+      className="text-lg"
     >
-      <div className="flex items-center gap-2 px-2">
-        <div className="w-2 h-2 rounded-full bg-white" />
-        <p className="md:min-w-[140px] text-sm lg:text-base font-bold">
-          {item.time}
-        </p>
-        <span>:</span>
+      <div className="flex flex-col md:flex-row gap-1 md:items-center">
+        <div className="flex items-center gap-2 px-2">
+          <div className="w-2 h-2 rounded-full bg-white" />
+          <p className="md:min-w-[140px] text-sm lg:text-base font-bold">
+            {item.time}
+          </p>
+          <span>:</span>
+        </div>
+        <p className="text-sm px-10">{item.text}</p>
       </div>
-      <p className="text-sm px-10">{item.text}</p>
     </motion.li>
   );
 };

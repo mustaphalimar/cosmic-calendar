@@ -1,5 +1,4 @@
 import IntroductionScreen from "@/screens/introduction";
-import AudioControl from "@/components/audio-control";
 
 export default function Home() {
   return (

@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
-import { Inter, Fira_Code, Roboto, Outfit } from "next/font/google";
+import { Fira_Code, Inter, Outfit, Roboto } from "next/font/google";
 import localFont from "next/font/local";
 
-import "./globals.css";
 import StarrySky from "@/components/StarrySky";
 import BackgroundAudio from "@/components/background-audio";
-import { Analytics } from "@vercel/analytics/react";
-import Providers from "@/providers";
 import { cn } from "@/lib/utils";
+import Providers from "@/providers";
+import { Analytics } from "@vercel/analytics/react";
+import "./globals.css";
 
 const ddin = localFont({
   src: [

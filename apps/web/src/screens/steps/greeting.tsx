@@ -1,10 +1,9 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { UseIntroduction, useIntroduction } from "@/hooks/use-introduction";
-import { UseStarrySky, useStarrySky } from "@/hooks/use-starry-sky";
+import { UseIntroduction } from "@/hooks/use-introduction";
+import { UseStarrySky } from "@/hooks/use-starry-sky";
 import { motion } from "framer-motion";
-import { useEffect } from "react";
 
 interface Props {
   introduction: UseIntroduction;
@@ -43,7 +42,7 @@ const Greeting: React.FC<Props> = ({ introduction, zoomIn }) => {
           initial={{ opacity: 0, y: 10, visibility: "hidden" }} // Start with 0% opacity and slightly lower position
           animate={{ opacity: 1, y: -10, visibility: "visible" }} // Animate to 100% opacity and move to original position
           transition={{ duration: 1.2, delay: 3.5, ease: "circInOut" }}
-          className=" text-xl lg:text-3xl uppercase"
+          className=" text-xl font-normal lg:text-3xl uppercase "
         >
           This is a web demonstration of the Cosmic Calendar concept
         </motion.p>
@@ -63,9 +62,6 @@ const Greeting: React.FC<Props> = ({ introduction, zoomIn }) => {
           >
             Continue
           </Button>
-          {/* <Button variant="default" className="" onClick={handleContinue}>
-            About
-          </Button> */}
         </motion.div>
       </div>
     </section>

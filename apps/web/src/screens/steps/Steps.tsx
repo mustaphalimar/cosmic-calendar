@@ -4,7 +4,6 @@ import { UseIntroduction } from "@/hooks/use-introduction";
 import { UseStarrySky } from "@/hooks/use-starry-sky";
 
 import { motion } from "framer-motion";
-import { useEffect } from "react";
 
 interface StepsProps {
   steps: React.ReactNode[];

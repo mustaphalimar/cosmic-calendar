@@ -26,14 +26,24 @@ const Explore: React.FC<Props> = ({}) => {
   useEffect(() => {
     if (monthParam) {
       timeline.setMonth(monthParam);
+    } else {
+      timeline.setMonth("");
     }
     if (dayParam) {
       timeline.setDay(dayParam);
+    } else {
+      timeline.setDay(0);
     }
     if (hourParam) {
       timeline.setHour(hourParam);
+    } else {
+      timeline.setHour("");
     }
   }, [monthParam, dayParam, hourParam]);
+
+  useEffect(() => {
+    console.log(timeline);
+  }, [timeline]);
 
   useEffect(() => {
     let newTimeline: string = "";

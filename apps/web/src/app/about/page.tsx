@@ -54,6 +54,9 @@ const page = () => {
               </li>
             </ul>
           </div>
+          <p className="text-sm font-normal mt-4">
+            All rights reserved 2024 &copy;
+          </p>
         </div>
       </div>
     </main>

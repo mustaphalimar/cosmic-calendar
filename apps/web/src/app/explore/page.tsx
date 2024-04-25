@@ -1,52 +1,53 @@
 "use client";
 
-import { months } from "@/data/calendar";
-import { motion } from "framer-motion";
-import Link from "next/link";
-import { useSearchParams, useRouter } from "next/navigation";
-import { useEffect } from "react";
+import { useTimeline } from "@/hooks/use-timeline";
+import { useSearchParams } from "next/navigation";
+import { useEffect, useMemo, useState } from "react";
+import Days from "./_components/days";
+import Months from "./_components/months";
 
 interface Props {}
 
 const Explore: React.FC<Props> = ({}) => {
   const searchParams = useSearchParams();
+  const [fullTimeline, setFullTimeline] = useState("");
 
-  const params = new URLSearchParams(searchParams.toString());
+  const timeline = useTimeline();
 
-  // params.forEach((p) => {});
-
-  return (
-    <main className="w-full h-screen  text-gray-200 grid grid-cols-2 md:grid-cols-3  lg:grid-cols-4 lg:grid-rows-3">
-      {months.map((month) => {
-        return (
-          <Link
-            href={`?month=${month.name.toLowerCase()}`}
-            key={month.id}
-            className=" cursor-pointer group w-full border transition duration-500 hover:bg-gray-950 p-2"
-          >
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{
-                duration: 1,
-                delay: 0.1 * month.id,
-              }}
-              className=""
-            >
-              <p className=" text-2xl lg:text-4xl font-[100] m-2">
-                {month.name}
-              </p>
-              <p
-                className={`text-base opacity-0 transition duration-300 group-hover:opacity-100 text-gray-400 font-thin `}
-              >
-                From {month.range[0]} to {month.range[1]}
-              </p>
-            </motion.div>
-          </Link>
-        );
-      })}
-    </main>
+  const params = useMemo(
+    () => new URLSearchParams(searchParams.toString()),
+    [searchParams]
   );
+
+  const monthParam = params.get("month");
+  const dayParam = parseInt(params.get("day") as string, 10);
+  const hourParam = params.get("hour");
+
+  useEffect(() => {
+    if (monthParam) {
+      timeline.setMonth(monthParam);
+    }
+    if (dayParam) {
+      timeline.setDay(dayParam);
+    }
+    if (hourParam) {
+      timeline.setHour(hourParam);
+    }
+  }, [monthParam, dayParam, hourParam]);
+
+  useEffect(() => {
+    let newTimeline: string = "";
+    params.forEach((p) => {
+      newTimeline += `/${p}`;
+    });
+    setFullTimeline(newTimeline);
+  }, [params]);
+
+  if (timeline.month) {
+    return <Days month={timeline.month} />;
+  }
+
+  return <Months />;
 };
 
 export default Explore;

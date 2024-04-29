@@ -351,7 +351,7 @@ const BriefOverview: React.FC<Props> = ({ introduction, starrySky }) => {
           }}
           className="mt-10 flex justify-center"
         >
-          <Link
+          <a
             className={buttonVariants({
               variant: "outline",
               className: "text-black",
@@ -360,7 +360,7 @@ const BriefOverview: React.FC<Props> = ({ introduction, starrySky }) => {
             // onClick={handleContinue}
           >
             Start Exploring &rarr;
-          </Link>
+          </a>
           {/* <Button
             variant="outline"
             className="text-black"

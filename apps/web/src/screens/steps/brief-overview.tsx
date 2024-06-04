@@ -9,6 +9,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef } from "react";
 
+import { trpcClient } from "@cosmic-calendar/trpc-client/src/client";
+
 const infos = [
   {
     id: 1,
@@ -108,6 +110,8 @@ const BriefOverview: React.FC<Props> = ({ introduction, starrySky }) => {
   const timeMeasurementControls = useAnimation();
   const buttonControls = useAnimation();
 
+  const { data, isLoading } = trpcClient.hello.useQuery();
+
   useEffect(() => {
     if (isButtonInView) {
       buttonControls.start("visible");
@@ -158,9 +162,7 @@ const BriefOverview: React.FC<Props> = ({ introduction, starrySky }) => {
             }
             transition={{ duration: 0.5, delay: 0.8, ease: "backOut" }}
           >
-            <p className="text-3xl mt-4 lg:mt-0  font-bold ">
-              A Brief Overview of The Cosmic Calendar
-            </p>
+            <p className="text-3xl mt-4 lg:mt-0  font-bold ">{data?.message}</p>
           </motion.div>
         </motion.div>
 

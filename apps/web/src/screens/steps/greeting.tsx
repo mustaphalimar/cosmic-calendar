@@ -42,7 +42,7 @@ const Greeting: React.FC<Props> = ({ introduction, zoomIn }) => {
           initial={{ opacity: 0, y: 10, visibility: "hidden" }} // Start with 0% opacity and slightly lower position
           animate={{ opacity: 1, y: -10, visibility: "visible" }} // Animate to 100% opacity and move to original position
           transition={{ duration: 1.2, delay: 3.5, ease: "circInOut" }}
-          className=" text-xl font-normal lg:text-3xl uppercase "
+          className=" text-xl font-semibold lg:text-3xl uppercase "
         >
           This is a web demonstration of the Cosmic Calendar concept
         </motion.p>

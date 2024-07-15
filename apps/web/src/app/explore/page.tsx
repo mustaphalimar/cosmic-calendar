@@ -5,6 +5,7 @@ import { useSearchParams } from "next/navigation";
 import { useEffect, useMemo, useState } from "react";
 import Days from "./_components/days";
 import Months from "./_components/months";
+import Day from "./_components/day";
 
 interface Props {}
 
@@ -53,9 +54,8 @@ const Explore: React.FC<Props> = ({}) => {
     setFullTimeline(newTimeline);
   }, [params]);
 
-  if (timeline.month) {
-    return <Days month={timeline.month} />;
-  }
+  if (timeline.day) return <Day />;
+  if (timeline.month) return <Days month={timeline.month} />;
 
   return <Months />;
 };

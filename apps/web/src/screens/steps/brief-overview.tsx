@@ -1,5 +1,6 @@
 "use client";
 
+import Container from "@/components/layouts/Container";
 import SpaceCanvas from "@/components/space-background";
 import { buttonVariants } from "@/components/ui/button";
 import { UseIntroduction } from "@/hooks/use-introduction";
@@ -133,40 +134,11 @@ const BriefOverview: React.FC<Props> = ({ introduction, starrySky }) => {
   }, [isTimeMeasurementInView]);
 
   return (
-    <section className="md:w-[75%] lg:w-[60%] m-auto ">
-      <SpaceCanvas />
-      <div className="py-10">
-        <motion.div
-          initial={{ opacity: 0, y: 0, visibility: "hidden" }}
-          animate={
-            introduction.currentStep === 1 && {
-              opacity: 1,
-              y: -10,
-              visibility: "visible",
-            }
-          }
-          transition={{ duration: 0.5, delay: 1, ease: "backOut" }}
-        >
+    <section className="">
+      <Container>
+        <SpaceCanvas />
+        <div className="py-10">
           <motion.div
-            initial={{ opacity: 0, y: 10, visibility: "hidden" }}
-            animate={
-              introduction.currentStep === 1 && {
-                opacity: 1,
-                y: 0,
-                visibility: "visible",
-              }
-            }
-            transition={{ duration: 0.5, delay: 0.8, ease: "backOut" }}
-          >
-            <p className="text-3xl mt-4 lg:mt-0  font-bold ">
-              A Brief Overview of The Cosmic Calendar
-            </p>
-          </motion.div>
-        </motion.div>
-
-        <motion.div>
-          <motion.div
-            className="font-normal border p-2 mt-4  flex flex-col-reverse md:flex-row items-center  gap-4"
             initial={{ opacity: 0, y: 0, visibility: "hidden" }}
             animate={
               introduction.currentStep === 1 && {
@@ -175,42 +147,72 @@ const BriefOverview: React.FC<Props> = ({ introduction, starrySky }) => {
                 visibility: "visible",
               }
             }
-            transition={{ duration: 0.5, delay: 1.5, ease: "backOut" }}
+            transition={{ duration: 0.5, delay: 1, ease: "backOut" }}
           >
-            <div className=" flex flex-col mt-4 w-full md:w-[800px] items-center gap-2 ">
-              <Image
-                src="/images/carl-sagan.png"
-                width={200}
-                height={200}
-                alt="car-sagan"
-                className="w-full md:w-[800px]  object-contain"
-              />
-              <p className="text-sm">Carl Sagan. (1934 - 1996)</p>
-            </div>
-            <p className="lg:text-lg">
-              The Cosmic Calendar is a method to visualize the history of the
-              universe by scaling its 13.8 billion year lifespan down to a
-              single year. This visualization helps illustrate the vast
-              timescales of cosmic events, making it easier to understand the
-              sequence and duration of key milestones in the {`universe's `}
-              development. This concept was popularized by astronomer Carl Sagan
-              in his book and television series Cosmos.
-            </p>
+            <motion.div
+              initial={{ opacity: 0, y: 10, visibility: "hidden" }}
+              animate={
+                introduction.currentStep === 1 && {
+                  opacity: 1,
+                  y: 0,
+                  visibility: "visible",
+                }
+              }
+              transition={{ duration: 0.5, delay: 0.8, ease: "backOut" }}
+            >
+              <p className="text-3xl mt-4 lg:mt-0  font-bold ">
+                A Brief Overview of The Cosmic Calendar
+              </p>
+            </motion.div>
           </motion.div>
 
-          <motion.div
-            className="font-normal border py-3 p-1 md:p-2 mt-10 space-y-10"
-            initial={{ opacity: 0, y: 0, visibility: "hidden" }}
-            animate={
-              introduction.currentStep === 1 && {
-                opacity: 1,
-                y: -10,
-                visibility: "visible",
+          <motion.div>
+            <motion.div
+              className="font-normal  -b p-2 mt-4  flex flex-col-reverse md:flex-row items-center  gap-4"
+              initial={{ opacity: 0, y: 0, visibility: "hidden" }}
+              animate={
+                introduction.currentStep === 1 && {
+                  opacity: 1,
+                  y: -10,
+                  visibility: "visible",
+                }
               }
-            }
-            transition={{ duration: 0.5, delay: 2.2, ease: "backOut" }}
-          >
-            {/* <Image
+              transition={{ duration: 0.5, delay: 1.5, ease: "backOut" }}
+            >
+              <div className=" flex flex-col mt-4 w-full md:w-[800px] items-center gap-2 ">
+                <Image
+                  src="/images/carl-sagan.png"
+                  width={200}
+                  height={200}
+                  alt="car-sagan"
+                  className="w-full md:w-[800px]  object-contain"
+                />
+                <p className="text-sm">Carl Sagan. (1934 - 1996)</p>
+              </div>
+              <p className="lg:text-lg">
+                The Cosmic Calendar is a method to visualize the history of the
+                universe by scaling its 13.8 billion year lifespan down to a
+                single year. This visualization helps illustrate the vast
+                timescales of cosmic events, making it easier to understand the
+                sequence and duration of key milestones in the {`universe's `}
+                development. This concept was popularized by astronomer Carl
+                Sagan in his book and television series Cosmos.
+              </p>
+            </motion.div>
+
+            <motion.div
+              className="font-normal  -b py-3 p-1 md:p-2 mt-10 space-y-10"
+              initial={{ opacity: 0, y: 0, visibility: "hidden" }}
+              animate={
+                introduction.currentStep === 1 && {
+                  opacity: 1,
+                  y: -10,
+                  visibility: "visible",
+                }
+              }
+              transition={{ duration: 0.5, delay: 2.2, ease: "backOut" }}
+            >
+              {/* <Image
               src="/images/cosmiccalendar-2.jpg"
               width={300}
               height={300}
@@ -218,8 +220,8 @@ const BriefOverview: React.FC<Props> = ({ introduction, starrySky }) => {
               className="w-full"
             /> */}
 
-            {/* <main
-              className="w-full border  text-gray-200 grid grid-cols-3 lg:grid-cols-4"
+              {/* <main
+              className="w-full    text-gray-200 grid grid-cols-3 lg:grid-cols-4"
               ref={calendarRef}
             >
               {months.map((month) => {
@@ -236,7 +238,7 @@ const BriefOverview: React.FC<Props> = ({ introduction, starrySky }) => {
                       delay: 0.1 * month.id,
                     }}
                     key={month.id}
-                    className=" h-[70px]  lg:h-[120px] w-full border transition duration-500 p-1 lg:p-2"
+                    className=" h-[70px]  lg:h-[120px] w-full   transition duration-500 p-1 lg:p-2"
                   >
                     <p className="  lg:text-3xl font-[100] ">{month.name}</p>
                   </motion.div>
@@ -244,132 +246,133 @@ const BriefOverview: React.FC<Props> = ({ introduction, starrySky }) => {
               })}
             </main> */}
 
-            <div>
+              <div>
+                <motion.div
+                  variants={{
+                    hidden: { width: 0 },
+                    visible: { width: "100%" },
+                  }}
+                  initial="hidden"
+                  animate={calendarControls}
+                  transition={{
+                    duration: 1,
+                    delay: 1,
+                    ease: "backInOut",
+                  }}
+                  className="h-[0.5px] bg-white"
+                />
+
+                <motion.p
+                  ref={soTimeMeasurementRef}
+                  variants={{
+                    hidden: { opacity: 0 },
+                    visible: { opacity: 1 },
+                  }}
+                  initial="hidden"
+                  animate={timeMeasurementControls}
+                  transition={{
+                    duration: 1,
+                  }}
+                  className="my-6 text-2xl text-gray-100"
+                >
+                  How time is represented in the Cosmic Calendar:
+                </motion.p>
+
+                <motion.p
+                  variants={{
+                    hidden: { opacity: 0 },
+                    visible: { opacity: 1 },
+                  }}
+                  initial="hidden"
+                  animate={timeMeasurementControls}
+                  transition={{
+                    delay: 1,
+                  }}
+                  className="mt-2 md:text-lg"
+                >
+                  At this scale, time is measured much differently than what we
+                  are used to, but it starts to make sense as you explore the
+                  calendar.{` Let's`} see what that looks like:
+                </motion.p>
+
+                <div className="mt-8">
+                  <ul className=" flex flex-col gap-6">
+                    {timeMeasurements.map((item) => (
+                      <TimeMeasurement key={item.id} item={item} />
+                    ))}
+                  </ul>
+                </div>
+              </div>
+
               <motion.div
-                variants={{
-                  hidden: { width: 0 },
-                  visible: { width: "100%" },
-                }}
-                initial="hidden"
-                animate={calendarControls}
+                initial={{ width: 0 }}
+                animate={{ width: "100%" }}
                 transition={{
                   duration: 1,
-                  delay: 1,
                   ease: "backInOut",
                 }}
-                className="h-[0.5px] bg-white"
+                className="w-[90%] m-auto h-[0.5px] bg-white"
               />
-
-              <motion.p
-                ref={soTimeMeasurementRef}
-                variants={{
-                  hidden: { opacity: 0 },
-                  visible: { opacity: 1 },
-                }}
-                initial="hidden"
-                animate={timeMeasurementControls}
-                transition={{
-                  duration: 1,
-                }}
-                className="my-6 text-2xl text-gray-100"
-              >
-                How time is represented in the Cosmic Calendar:
-              </motion.p>
-
-              <motion.p
-                variants={{
-                  hidden: { opacity: 0 },
-                  visible: { opacity: 1 },
-                }}
-                initial="hidden"
-                animate={timeMeasurementControls}
-                transition={{
-                  delay: 1,
-                }}
-                className="mt-2 md:text-lg"
-              >
-                At this scale, time is measured much differently than what we
-                are used to, but it starts to make sense as you explore the
-                calendar.{` Let's`} see what that looks like:
-              </motion.p>
-
-              <div className="mt-8">
-                <ul className=" flex flex-col gap-6">
-                  {timeMeasurements.map((item) => (
-                    <TimeMeasurement key={item.id} item={item} />
-                  ))}
-                </ul>
+              <div>
+                <motion.p
+                  ref={soWhatHappendRef}
+                  variants={{
+                    hidden: { opacity: 0 },
+                    visible: { opacity: 1 },
+                  }}
+                  initial="hidden"
+                  animate={whatHappendControls}
+                  transition={{
+                    duration: 1,
+                  }}
+                  className="text-2xl text-gray-100"
+                >
+                  What really happened in the universe at this scale?
+                </motion.p>
+                <div className="mt-8">
+                  <ul className=" flex flex-col gap-6">
+                    {infos.map((item) => (
+                      <Event key={item.id} item={item} />
+                    ))}
+                  </ul>
+                </div>
               </div>
-            </div>
-
-            <motion.div
-              initial={{ width: 0 }}
-              animate={{ width: "100%" }}
-              transition={{
-                duration: 1,
-                ease: "backInOut",
-              }}
-              className="w-[90%] m-auto h-[0.5px] bg-white"
-            />
-            <div>
-              <motion.p
-                ref={soWhatHappendRef}
-                variants={{
-                  hidden: { opacity: 0 },
-                  visible: { opacity: 1 },
-                }}
-                initial="hidden"
-                animate={whatHappendControls}
-                transition={{
-                  duration: 1,
-                }}
-                className="text-2xl text-gray-100"
-              >
-                What really happened in the universe at this scale?
-              </motion.p>
-              <div className="mt-8">
-                <ul className=" flex flex-col gap-6">
-                  {infos.map((item) => (
-                    <Event key={item.id} item={item} />
-                  ))}
-                </ul>
-              </div>
-            </div>
+            </motion.div>
           </motion.div>
-        </motion.div>
-        <motion.div
-          ref={buttonRef}
-          variants={{
-            hidden: { opacity: 0 },
-            visible: { opacity: 1 },
-          }}
-          initial="hidden"
-          animate={buttonControls}
-          transition={{
-            duration: 1,
-            delay: 1,
-          }}
-          className="mt-10 flex justify-center"
-        >
-          <a
-            className={buttonVariants({
-              variant: "outline",
-              className: "text-black",
-            })}
-            href="/explore"
-            // onClick={handleContinue}
+          <motion.div
+            ref={buttonRef}
+            variants={{
+              hidden: { opacity: 0 },
+              visible: { opacity: 1 },
+            }}
+            initial="hidden"
+            animate={buttonControls}
+            transition={{
+              duration: 1,
+              delay: 1,
+            }}
+            className="mt-10 flex justify-center"
           >
-            Start Exploring &rarr;
-          </a>
-          {/* <Button
+            <a
+              className={buttonVariants({
+                variant: "outline",
+                className: "text-black",
+              })}
+              href="/explore"
+              // onClick={handleContinue}
+            >
+              Start Exploring &rarr;
+            </a>
+            {/* <Button
             variant="outline"
             className="text-black"
             // onClick={handleContinue}
           >
 
           </Button> */}
-        </motion.div>
-      </div>
+          </motion.div>
+        </div>
+      </Container>
     </section>
   );
 };

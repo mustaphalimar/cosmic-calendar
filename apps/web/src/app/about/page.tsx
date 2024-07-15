@@ -23,10 +23,7 @@ const page = () => {
         </Link>
       </div>
       <div className="mt-5 flex flex-col gap-2 items-center">
-        <p className="font-thin">
-          Built with passion❤️‍🔥 by{" "}
-          <span className="underline">Mustapha Limar</span>
-        </p>
+        <p className="font-thin">Built with passion❤️‍🔥 by:</p>
         <div className="mt-5">
           <ul className="flex flex-col font-thin gap-1 text-sm">
             <li className="flex items-center gap-1">
@@ -42,11 +39,11 @@ const page = () => {
             <li className="flex items-center gap-1">
               <Image src="/images/x.jpg" width={24} height={24} alt="x" />
               <Link
-                href="https://x.com/taph4m"
+                href="https://x.com/afadev"
                 className="hover:underline"
                 target="_blank"
               >
-                @taph4m
+                @afadev
               </Link>
             </li>
             <li className="flex items-center gap-1">

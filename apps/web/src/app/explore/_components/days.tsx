@@ -8,7 +8,7 @@ interface Props {
 
 const Days: React.FC<Props> = ({ month }) => {
   return (
-    <main className="w-full h-screen  text-gray-200 grid grid-cols-3 md:grid-cols-3  lg:grid-cols-6 lg:grid-rows-5">
+    <main className="w-full h-screen  text-gray-200 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3  lg:grid-cols-6 lg:grid-rows-5">
       {days.map((day) => {
         return (
           <Link
